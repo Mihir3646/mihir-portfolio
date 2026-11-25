@@ -1,59 +1,112 @@
 (() => {
   const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Theme toggle (dark by default, choice remembered when storage is available) */
   const themeBtn = document.querySelector('[data-theme-toggle]');
-  const menuBtn = document.querySelector('[data-menu-toggle]');
-  const nav = document.querySelector('[data-nav]');
-  let mode = null;
-  try { mode = localStorage.getItem('mt-theme'); } catch (_) { /* Storage can be disabled by browser privacy settings. */ }
-  if (mode === 'light' || mode === 'dark') root.dataset.theme = mode;
-  if (themeBtn) {
-    const update = () => {
-      const isLight = root.dataset.theme === 'light';
-      themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
-      themeBtn.title = isLight ? 'Switch to dark theme' : 'Switch to light theme';
-    };
-    update();
-    themeBtn.addEventListener('click', () => {
-      root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-      try { localStorage.setItem('mt-theme', root.dataset.theme); } catch (_) { /* Theme toggle still works for this page. */ }
-      update();
+  let saved = null;
+  try { saved = localStorage.getItem('mt-theme'); } catch (_) { /* storage may be disabled */ }
+  if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+  const syncThemeLabel = () => {
+    if (!themeBtn) return;
+    const label = root.dataset.theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
+    themeBtn.setAttribute('aria-label', label);
+    themeBtn.title = label;
+  };
+  syncThemeLabel();
+  themeBtn?.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    try { localStorage.setItem('mt-theme', root.dataset.theme); } catch (_) { /* still works for this page */ }
+    syncThemeLabel();
+  });
+
+  /* Dock scroll-spy: highlight the section currently in view */
+  const dockLinks = [...document.querySelectorAll('[data-dock] a[href^="#"]')];
+  const spied = dockLinks.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  if (spied.length && 'IntersectionObserver' in window) {
+    const setActive = id => dockLinks.forEach(a => {
+      const on = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('active', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
     });
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    spied.forEach(s => spy.observe(s));
+    setActive(spied[0].id);
   }
-  if (menuBtn && nav) {
-    menuBtn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-    });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.setAttribute('aria-label', 'Open navigation menu');
-    }));
-  }
+
+  /* Project filters + "view all" */
   const filterBtns = [...document.querySelectorAll('[data-filter]')];
   const cards = [...document.querySelectorAll('[data-category]')];
-  filterBtns.forEach(button => button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    filterBtns.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
-    cards.forEach(card => card.hidden = filter !== 'all' && card.dataset.category !== filter);
+  const moreBtn = document.querySelector('[data-more]');
+  let filter = 'all';
+  let expanded = false;
+  const renderCards = () => {
+    cards.forEach(card => {
+      const matches = filter === 'all' || card.dataset.category === filter;
+      const hiddenExtra = filter === 'all' && card.hasAttribute('data-extra') && !expanded;
+      card.hidden = !matches || hiddenExtra;
+      if (!card.hidden) card.classList.add('in-view');
+    });
+    if (moreBtn) {
+      moreBtn.hidden = filter !== 'all';
+      moreBtn.setAttribute('aria-expanded', String(expanded));
+      const extra = cards.filter(c => c.hasAttribute('data-extra')).length;
+      moreBtn.firstChild.textContent = expanded ? 'Show fewer projects ' : `View all ${cards.length} projects (+${extra} more) `;
+    }
+  };
+  filterBtns.forEach(btn => btn.addEventListener('click', () => {
+    filter = btn.dataset.filter;
+    filterBtns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    renderCards();
   }));
-  document.querySelectorAll('[data-copy-email]').forEach(button => {
-    button.addEventListener('click', async () => {
-      const label = button.textContent;
+  moreBtn?.addEventListener('click', () => { expanded = !expanded; renderCards(); });
+  if (cards.length) renderCards();
+
+  /* Copy buttons */
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    const label = btn.querySelector('span');
+    btn.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText('mihir3646@gmail.com');
-        button.textContent = 'Email copied';
-        window.setTimeout(() => button.textContent = label, 2000);
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        if (label) { label.textContent = 'Copied'; setTimeout(() => { label.textContent = 'Copy'; }, 1800); }
       } catch (_) {
-        window.location.href = 'mailto:mihir3646@gmail.com';
+        if (label) label.textContent = btn.dataset.copy;
       }
     });
   });
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+  /* Contact form: static site, so it opens the visitor's email app with the message filled in */
+  const form = document.querySelector('[data-mail-form]');
+  const status = document.querySelector('[data-form-status]');
+  form?.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      if (status) status.textContent = 'Please fill in every field with a valid email address.';
+      return;
+    }
+    const data = new FormData(form);
+    const body = `${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`;
+    const href = 'mailto:mihir3646@gmail.com'
+      + '?subject=' + encodeURIComponent(String(data.get('subject')))
+      + '&body=' + encodeURIComponent(body);
+    window.location.href = href;
+    if (status) status.textContent = 'Opening your email app… If nothing happens, email mihir3646@gmail.com directly.';
+  });
+
+  /* Back to top */
+  document.querySelector('[data-to-top]')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  /* Reveal on scroll */
+  if ('IntersectionObserver' in window && !reduceMotion) {
     root.classList.add('js-ready');
-    const sections = [...document.querySelectorAll('.reveal')];
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); }});
-    }, {rootMargin:'0px 0px -35px 0px',threshold:.05});
-    sections.forEach(s => observer.observe(s));
+    const reveal = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); reveal.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -30px 0px', threshold: 0.04 });
+    document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
   }
 })();
