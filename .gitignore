@@ -1,0 +1,16 @@
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies and logs
+node_modules/
+npm-debug.log*
+
+# Local environment
+.env
+.env.*
