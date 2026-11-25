@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#121110">
+<meta name="theme-color" content="#0b1020">
 <meta name="description" content="Mihir Trivedi, Head of Tech Team at RightSol Pvt. Ltd. 14+ years in Android, Flutter, product delivery and AI-augmented engineering. Explore case studies, skills and experience, and download an ATS-ready resume.">
 <meta name="author" content="Mihir Trivedi">
 <meta name="robots" content="index, follow">
@@ -33,6 +33,10 @@
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  <symbol id="i-medium" viewBox="0 0 24 24"><ellipse cx="7" cy="12" rx="5.6" ry="5.6" fill="currentColor" stroke="none"/><ellipse cx="16.2" cy="12" rx="2.8" ry="5.3" fill="currentColor" stroke="none"/><ellipse cx="21.3" cy="12" rx="1.1" ry="4.8" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-blogger" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8.5 9h3.5M8.5 15h7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
   <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
@@ -93,7 +97,7 @@
       <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
         <svg class="i sun"><use href="#i-sun"/></svg><svg class="i moon"><use href="#i-moon"/></svg>
       </button>
-      <a class="btn btn-lime btn-sm resume-btn" href="resume/Mihir_Trivedi_ATS_Resume.pdf" download="Mihir_Trivedi_ATS_Resume.pdf" aria-label="Download resume">
+      <a class="btn btn-accent btn-sm resume-btn" href="resume/Mihir_Trivedi_ATS_Resume.pdf" data-resume-open aria-haspopup="dialog" aria-label="View resume">
         <svg class="i"><use href="#i-file"/></svg><span class="lbl">Resume</span>
       </a>
     </div>
@@ -107,10 +111,8 @@
     <div class="profile-card">
       <div class="avatar">
         <span class="avatar-mono" aria-hidden="true">M<span>T</span></span>
-        <!-- To show your photo: save it as assets/profile.jpg and uncomment the next line.
-        <img src="assets/profile.jpg" alt="Mihir Trivedi" width="184" height="204">
-        -->
-        <span class="avatar-badge"><span class="dot" aria-hidden="true"></span><b>Active</b> RightSol Pvt. Ltd.</span>
+        <img src="assets/img/profile.webp" alt="Photo of Mihir Trivedi" width="480" height="532" fetchpriority="high" decoding="async">
+        <span class="avatar-badge"><span class="dot live" aria-hidden="true"></span><b>Active</b> RightSol Pvt. Ltd.</span>
       </div>
       <h2>Mihir Trivedi</h2>
       <p class="profile-role">Head of Tech Team</p>
@@ -122,7 +124,7 @@
       <div class="profile-actions">
         <a class="p-btn" href="mailto:mihir3646@gmail.com"><svg class="i"><use href="#i-mail"/></svg>Email</a>
         <a class="p-btn" href="tel:+919427064910"><svg class="i"><use href="#i-phone"/></svg>Call</a>
-        <a class="p-btn solid" href="resume/Mihir_Trivedi_ATS_Resume.pdf" target="_blank" rel="noopener"><svg class="i"><use href="#i-file"/></svg>View ATS Resume</a>
+        <a class="p-btn solid" href="resume/Mihir_Trivedi_ATS_Resume.pdf" data-resume-open aria-haspopup="dialog"><svg class="i"><use href="#i-file"/></svg>View ATS Resume</a>
         <a class="p-btn outline" href="#contact">Let's Connect <svg class="i"><use href="#i-arrow-r"/></svg></a>
       </div>
     </div>
@@ -134,30 +136,29 @@
     <section class="block" id="home" aria-labelledby="hero-name">
       <div class="reveal">
         <span class="status-pill"><span class="dot" aria-hidden="true"></span>14+ years in software engineering</span>
-        <h1 class="hero-name" id="hero-name">Mihir<br>Trivedi</h1>
+        <h1 class="hero-name" id="hero-name">Mihir Trivedi</h1>
         <p class="hero-title">Head of Tech Team</p>
         <p class="hero-copy">I lead technical delivery across mobile and web products, from understanding product requirements to architecture, <strong>Android</strong> and <strong>Flutter</strong> engineering, releases and production stability. At RightSol I work on Programming Hub's mobile portfolio, including a shared codebase of <span class="hl">~40 Android app flavors</span>.</p>
         <div class="hero-actions">
-          <a class="btn btn-lime" href="#work"><svg class="i"><use href="#i-layers"/></svg>View My Work</a>
+          <a class="btn btn-accent" href="#work"><svg class="i"><use href="#i-layers"/></svg>View My Work</a>
           <a class="btn btn-dark" href="#contact"><svg class="i"><use href="#i-mail"/></svg>Contact Me</a>
-          <a class="btn btn-orange" href="resume/Mihir_Trivedi_ATS_Resume.pdf" download="Mihir_Trivedi_ATS_Resume.pdf"><svg class="i"><use href="#i-file"/></svg>Download Resume</a>
+          <a class="btn btn-violet" href="resume/Mihir_Trivedi_ATS_Resume.pdf" data-resume-open aria-haspopup="dialog"><svg class="i"><use href="#i-file"/></svg>View Resume</a>
         </div>
       </div>
       <div class="stats reveal" role="list">
-        <div class="stat" role="listitem"><strong>14+</strong><b>Years of experience</b><small>in software engineering</small></div>
-        <div class="stat" role="listitem"><strong>~40</strong><b>Android app flavors</b><small>one shared codebase</small></div>
-        <div class="stat" role="listitem"><strong>5M+</strong><b>Users reported</b><small>Programming Hub*</small></div>
-        <div class="stat" role="listitem"><strong>99.7%</strong><b>Crash-free users</b><small>milestone reached*</small></div>
+        <div class="stat" role="listitem"><strong>14+</strong><b>Years of experience</b><small>in software engineering since 2011</small></div>
+        <div class="stat" role="listitem"><strong>50+</strong><b>Android apps</b><small>worked on since 2012</small></div>
+        <div class="stat" role="listitem"><strong>7+</strong><b>Years leading tech</b><small>Head of Tech Team since 2019</small></div>
+        <div class="stat" role="listitem"><strong>4.7+</strong><b>App rating</b><small>Programming Hub, up from 4.0</small></div>
       </div>
-      <p class="stats-note">* Historical Programming Hub milestones from earlier reporting, not live metrics.</p>
       <div class="tiles reveal">
-        <a class="tile orange" href="#skills">
+        <a class="tile violet" href="#skills">
           <svg class="wave" viewBox="0 0 200 100" aria-hidden="true"><path d="M0 85C40 75 60 25 100 45S160 95 200 12"/></svg>
           <small>Core stack &amp; architecture</small>
           <strong>Android, Flutter, Firebase &amp; React</strong>
           <span class="tile-foot">Explore technical skills <i><svg class="i"><use href="#i-arrow-ur"/></svg></i></span>
         </a>
-        <a class="tile lime" href="#approach">
+        <a class="tile teal" href="#approach">
           <svg class="wave" viewBox="0 0 200 100" aria-hidden="true"><path d="M0 90 30 60l25 20 35-50 30 40 30-50 25 30 25-45"/></svg>
           <small>Engineering workflow</small>
           <strong>Requirements to production release</strong>
@@ -180,9 +181,9 @@
       <div class="subhead reveal"><h3><svg class="i"><use href="#i-phone-dev"/></svg>Core tech stack</h3><span>Production use</span></div>
       <div class="stack reveal">
         <div class="panel stack-item"><span class="icon-sq"><svg class="i"><use href="#i-code"/></svg></span><strong>Kotlin &amp; Java</strong><span>Native Android</span></div>
-        <div class="panel stack-item"><span class="icon-sq orange"><svg class="i"><use href="#i-layers"/></svg></span><strong>Flutter &amp; Dart</strong><span>Cross-platform</span></div>
+        <div class="panel stack-item"><span class="icon-sq alt"><svg class="i"><use href="#i-layers"/></svg></span><strong>Flutter &amp; Dart</strong><span>Cross-platform</span></div>
         <div class="panel stack-item"><span class="icon-sq"><svg class="i"><use href="#i-zap"/></svg></span><strong>Firebase</strong><span>Backend &amp; analytics</span></div>
-        <div class="panel stack-item"><span class="icon-sq orange"><svg class="i"><use href="#i-monitor"/></svg></span><strong>React</strong><span>Web delivery</span></div>
+        <div class="panel stack-item"><span class="icon-sq alt"><svg class="i"><use href="#i-monitor"/></svg></span><strong>React</strong><span>Web delivery</span></div>
         <div class="panel stack-item"><span class="icon-sq"><svg class="i"><use href="#i-sparkles"/></svg></span><strong>Claude Code</strong><span>AI-augmented dev</span></div>
       </div>
 
@@ -327,11 +328,11 @@
         </div>
       </div>
       <div class="filters reveal" role="group" aria-label="Filter projects">
-        <button class="filter" type="button" data-filter="all" aria-pressed="true">All projects <span>8</span></button>
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All projects <span>15</span></button>
         <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile <span>2</span></button>
         <button class="filter" type="button" data-filter="web" aria-pressed="false">Web <span>1</span></button>
         <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI-assisted <span>1</span></button>
-        <button class="filter" type="button" data-filter="earlier" aria-pressed="false">Earlier Android <span>4</span></button>
+        <button class="filter" type="button" data-filter="earlier" aria-pressed="false">Earlier Android <span>11</span></button>
       </div>
       <div class="work-grid">
         <article class="panel work-card reveal" data-category="mobile">
@@ -340,15 +341,15 @@
             <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-phone-dev"/></svg></span><div class="meta"><span class="cat">Flagship learning app</span><span class="kind">Programming Hub · Android &amp; iOS</span></div><span class="badge"><span class="dot" aria-hidden="true"></span>Live</span></div>
             <h3>Programming Hub: Learn to code</h3>
             <p>Mobile learning platform on Google Play and the App Store. My work spans native Android and Flutter, Firebase, analytics, in-app purchases and subscription flows.</p>
-            <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Google Play and App Store publishing workflows</li><li><svg class="i"><use href="#i-check-circle"/></svg>In-app purchases and subscription flows</li></ul></div>
-            <div class="tags"><span class="tag">Android</span><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Subscriptions</span></div>
+            <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Built-in code compiler, Lottie animations and Realm local storage</li><li><svg class="i"><use href="#i-check-circle"/></svg>In-app purchases, subscriptions and analytics</li><li><svg class="i"><use href="#i-check-circle"/></svg>Google Play and App Store publishing workflows</li></ul></div>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Flutter</span><span class="tag">Realm</span><span class="tag">Lottie</span><span class="tag">In-app purchases</span><span class="tag">Analytics</span></div>
             <div class="work-links"><a class="btn btn-ghost btn-sm" href="https://play.google.com/store/apps/details?id=com.freeit.java" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-play"/></svg>Google Play <svg class="i"><use href="#i-arrow-ur"/></svg></a><a class="btn btn-dark btn-sm" href="https://apps.apple.com/us/app/programming-hub-learn-coding/id1049691226" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-appstore"/></svg>App Store <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
           </div>
         </article>
         <article class="panel work-card reveal" data-category="mobile">
           <div class="work-media"><img src="assets/img/work-ecosystem.webp" alt="App icons from the Programming Hub developer page on Google Play" width="1280" height="800" loading="lazy" decoding="async"></div>
           <div class="work-body">
-            <div class="work-top"><span class="icon-sq orange"><svg class="i"><use href="#i-layers"/></svg></span><div class="meta"><span class="cat">Mobile &amp; architecture</span><span class="kind">Programming Hub app portfolio</span></div><span class="badge"><span class="dot" aria-hidden="true"></span>Case study</span></div>
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-layers"/></svg></span><div class="meta"><span class="cat">Mobile &amp; architecture</span><span class="kind">Programming Hub app portfolio</span></div><span class="badge"><span class="dot" aria-hidden="true"></span>Case study</span></div>
             <h3>Programming Hub mobile ecosystem</h3>
             <p>Shared Android codebase, ~40 app flavors, stability initiatives and ongoing release responsibility.</p>
             <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Shared code vs flavor-specific configuration</li><li><svg class="i"><use href="#i-check-circle"/></svg>Historical 99.7% crash-free user milestone</li></ul></div>
@@ -359,7 +360,7 @@
         <article class="panel work-card reveal" data-category="web">
           <div class="work-media"><img src="assets/img/work-web.webp" alt="The programminghub.io homepage in a browser window" width="1280" height="800" loading="lazy" decoding="async"></div>
           <div class="work-body">
-            <div class="work-top"><span class="icon-sq orange"><svg class="i"><use href="#i-monitor"/></svg></span><div class="meta"><span class="cat">Web &amp; product</span><span class="kind">programminghub.io</span></div><span class="badge"><span class="dot" aria-hidden="true"></span>Case study</span></div>
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-monitor"/></svg></span><div class="meta"><span class="cat">Web &amp; product</span><span class="kind">programminghub.io</span></div><span class="badge"><span class="dot" aria-hidden="true"></span>Case study</span></div>
             <h3>Programming Hub web platform</h3>
             <p>A React-based product website using existing APIs, Zustand and Tailwind CSS with AI-assisted implementation.</p>
             <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Frontend integrated with existing API services</li><li><svg class="i"><use href="#i-check-circle"/></svg>AI-assisted implementation and debugging</li></ul></div>
@@ -378,49 +379,108 @@
             <div class="work-links"><a class="btn btn-ghost btn-sm" href="projects/ai-augmented-workflows.html">Read case study <svg class="i"><use href="#i-arrow-r"/></svg></a></div>
           </div>
         </article>
-        <article class="panel work-card reveal" data-category="earlier" data-extra hidden>
-          <div class="work-media art" aria-hidden="true"><svg class="i"><use href="#i-message"/></svg></div>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
           <div class="work-body">
-            <div class="work-top"><span class="icon-sq orange"><svg class="i"><use href="#i-message"/></svg></span><div class="meta"><span class="cat">Social Android app</span><span class="kind">Android application</span></div><span class="badge muted">Earlier work</span></div>
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-pin"/></svg></span><div class="meta"><span class="cat">Social</span><span class="kind">Android app · earlier work</span></div></div>
             <h3>BOTY</h3>
-            <p>Social Android application. Participated in delivery and technical coordination.</p>
-            <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Networking with RxJava 2 and Retrofit 2</li><li><svg class="i"><use href="#i-check-circle"/></svg>QuickBlox integration and geofencing</li></ul></div>
-            <div class="tags"><span class="tag">Android</span><span class="tag">RxJava 2</span><span class="tag">Retrofit 2</span><span class="tag">QuickBlox</span></div>
+            <p>Social app for finding bartenders and bars and meeting people face to face. Participated in delivery and technical coordination.</p>
+            <div class="tags"><span class="tag">Android 4.4 – 8.0</span><span class="tag">RxJava 2</span><span class="tag">Retrofit 2</span><span class="tag">QuickBlox</span><span class="tag">Geofencing</span></div>
+            <div class="work-links"><a class="text-link" href="https://web.archive.org/web/20190920205553/https://play.google.com/store/apps/details?id=com.boty" target="_blank" rel="noopener noreferrer" title="Google Play listing saved by the Internet Archive in 2019">Saved Play listing (2019) <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
           </div>
         </article>
-        <article class="panel work-card reveal" data-category="earlier" data-extra hidden>
-          <div class="work-media art" aria-hidden="true"><svg class="i"><use href="#i-map"/></svg></div>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
           <div class="work-body">
-            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-map"/></svg></span><div class="meta"><span class="cat">Maps &amp; live updates</span><span class="kind">Android application</span></div><span class="badge muted">Earlier work</span></div>
+            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-map"/></svg></span><div class="meta"><span class="cat">Maps &amp; navigation</span><span class="kind">Android app · earlier work</span></div></div>
             <h3>Cribitt</h3>
-            <p>Android app built around maps and live updates.</p>
-            <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Map-based experience</li><li><svg class="i"><use href="#i-check-circle"/></svg>Live updates</li></ul></div>
-            <div class="tags"><span class="tag">Android</span><span class="tag">Maps</span></div>
+            <p>Maps and navigation app with live updates.</p>
+            <div class="tags"><span class="tag">Marker clustering</span><span class="tag">Static maps</span><span class="tag">Heatmaps</span><span class="tag">PubNub</span></div>
+            <div class="work-links"><span class="gone">No longer on Google Play</span></div>
           </div>
         </article>
-        <article class="panel work-card reveal" data-category="earlier" data-extra hidden>
-          <div class="work-media art" aria-hidden="true"><svg class="i"><use href="#i-key"/></svg></div>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
           <div class="work-body">
-            <div class="work-top"><span class="icon-sq orange"><svg class="i"><use href="#i-key"/></svg></span><div class="meta"><span class="cat">Authentication</span><span class="kind">Android application</span></div><span class="badge muted">Earlier work</span></div>
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-key"/></svg></span><div class="meta"><span class="cat">Two-factor authentication</span><span class="kind">Android app · earlier work</span></div></div>
             <h3>Verigator</h3>
-            <p>Android authentication app using time-based one-time passwords and QR codes.</p>
-            <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>TOTP authentication</li><li><svg class="i"><use href="#i-check-circle"/></svg>QR-code based flow</li></ul></div>
-            <div class="tags"><span class="tag">Android</span><span class="tag">TOTP</span><span class="tag">QR</span></div>
+            <p>Two-factor authentication app using time-based one-time passwords and QR code scanning.</p>
+            <div class="tags"><span class="tag">TOTP</span><span class="tag">QR code scanning</span></div>
+            <div class="work-links"><a class="text-link" href="https://web.archive.org/web/20200815181702/https://play.google.com/store/apps/details?id=com.messente.verigator" target="_blank" rel="noopener noreferrer" title="Google Play listing saved by the Internet Archive in 2020">Saved Play listing (2020) <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
           </div>
         </article>
-        <article class="panel work-card reveal" data-category="earlier" data-extra hidden>
-          <div class="work-media art" aria-hidden="true"><svg class="i"><use href="#i-keyboard"/></svg></div>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
           <div class="work-body">
-            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-keyboard"/></svg></span><div class="meta"><span class="cat">Custom keyboard</span><span class="kind">Android application</span></div><span class="badge muted">Earlier work</span></div>
+            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-keyboard"/></svg></span><div class="meta"><span class="cat">Custom keyboard</span><span class="kind">Android app · earlier work</span></div></div>
             <h3>ALF Mojis</h3>
-            <p>Custom media keyboard for Android.</p>
-            <div class="work-points"><ul class="checks"><li><svg class="i"><use href="#i-check-circle"/></svg>Custom input method with media content</li></ul></div>
-            <div class="tags"><span class="tag">Android</span><span class="tag">Keyboard</span></div>
+            <p>Custom keyboard that plays and shares GIFs, audio and video bundled with the app.</p>
+            <div class="tags"><span class="tag">Custom keyboard</span><span class="tag">GIF</span><span class="tag">Audio &amp; video</span></div>
+            <div class="work-links"><span class="gone">No longer on Google Play</span></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-briefcase"/></svg></span><div class="meta"><span class="cat">Job portal</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>Lavoro Live</h3>
+            <p>Job portal app with map-based search and push notifications.</p>
+            <div class="tags"><span class="tag">Google Maps</span><span class="tag">Places API</span><span class="tag">Push notifications</span></div>
+            <div class="work-links"><span class="gone">No longer on Google Play</span></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-message"/></svg></span><div class="meta"><span class="cat">Social</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>Tuisy</h3>
+            <p>Social app to meet people, chat and make friends.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Social</span></div>
+            <div class="work-links"><a class="text-link" href="https://web.archive.org/web/20190721145910/https://play.google.com/store/apps/details?id=com.easyplanning.tuisy" target="_blank" rel="noopener noreferrer" title="Google Play listing saved by the Internet Archive in 2019">Saved Play listing (2019) <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-send"/></svg></span><div class="meta"><span class="cat">Social sharing</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>Wekho</h3>
+            <p>Social sharing app with a custom action bar and multiple gestures.</p>
+            <div class="tags"><span class="tag">Custom action bar</span><span class="tag">Gestures</span></div>
+            <div class="work-links"><a class="text-link" href="https://web.archive.org/web/20150519111359/https://play.google.com/store/apps/details?id=com.portafolio.wekho" target="_blank" rel="noopener noreferrer" title="Google Play listing saved by the Internet Archive in 2015">Saved Play listing (2015) <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-building"/></svg></span><div class="meta"><span class="cat">Construction project management</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>PMA</h3>
+            <p>Construction project management app, listed on Google Play as “Byggprojekt”.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Project management</span></div>
+            <div class="work-links"><a class="text-link" href="https://web.archive.org/web/20230725222806/https://play.google.com/store/apps/details?id=com.abonovasverige.pma" target="_blank" rel="noopener noreferrer" title="Google Play listing saved by the Internet Archive in 2023">Saved Play listing (2023) <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-users"/></svg></span><div class="meta"><span class="cat">Social</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>Rajpath Club</h3>
+            <p>Social app for Rajpath Club.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Social</span></div>
+            <div class="work-links"><span class="gone">No longer on Google Play</span></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq"><svg class="i"><use href="#i-globe"/></svg></span><div class="meta"><span class="cat">Drupal site management</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>Druproid</h3>
+            <p>Manage a Drupal website from an Android phone.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Drupal</span></div>
+            <div class="work-links"><a class="text-link" href="https://web.archive.org/web/20150323200234/https://play.google.com/store/apps/details?id=com.yarrait.druproid" target="_blank" rel="noopener noreferrer" title="Google Play listing saved by the Internet Archive in 2015">Saved Play listing (2015) <svg class="i"><use href="#i-arrow-ur"/></svg></a></div>
+          </div>
+        </article>
+        <article class="panel work-card mini reveal" data-category="earlier" data-extra hidden>
+          <div class="work-body">
+            <div class="work-top"><span class="icon-sq alt"><svg class="i"><use href="#i-card"/></svg></span><div class="meta"><span class="cat">Coupons &amp; deals</span><span class="kind">Android app · earlier work</span></div></div>
+            <h3>FansRave</h3>
+            <p>Coupons and deals app.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Coupons &amp; deals</span></div>
+            <div class="work-links"><span class="gone">No longer on Google Play</span></div>
           </div>
         </article>
       </div>
       <div class="more-row reveal">
-        <button class="btn btn-dark btn-sm" type="button" data-more aria-expanded="false">View all 8 projects (+4 more) <svg class="i"><use href="#i-chevron"/></svg></button>
+        <button class="btn btn-dark btn-sm" type="button" data-more aria-expanded="false">View all 15 projects (+11 more) <svg class="i"><use href="#i-chevron"/></svg></button>
         <a class="btn btn-ghost btn-sm" href="https://play.google.com/store/apps/dev?id=8802462833480602617" target="_blank" rel="noopener noreferrer">Open developer page on Google Play <svg class="i"><use href="#i-external"/></svg></a>
       </div>
     </section>
@@ -481,7 +541,7 @@
       </div>
       <div class="contact-cards reveal">
         <div class="panel c-card">
-          <div class="c-card-top"><span class="icon-sq orange"><svg class="i"><use href="#i-mail"/></svg></span><div><small>Direct email</small><strong>mihir3646@gmail.com</strong></div></div>
+          <div class="c-card-top"><span class="icon-sq alt"><svg class="i"><use href="#i-mail"/></svg></span><div><small>Direct email</small><strong>mihir3646@gmail.com</strong></div></div>
           <div class="c-card-foot"><a href="mailto:mihir3646@gmail.com">Compose email <svg class="i"><use href="#i-external"/></svg></a><button class="copy-btn" type="button" data-copy="mihir3646@gmail.com"><svg class="i"><use href="#i-copy"/></svg><span>Copy</span></button></div>
         </div>
         <div class="panel c-card">
@@ -489,7 +549,7 @@
           <div class="c-card-foot"><a href="tel:+919427064910">Call now <svg class="i"><use href="#i-external"/></svg></a><button class="copy-btn" type="button" data-copy="+91 94270 64910"><svg class="i"><use href="#i-copy"/></svg><span>Copy</span></button></div>
         </div>
         <div class="panel c-card">
-          <div class="c-card-top"><span class="icon-sq orange"><svg class="i"><use href="#i-pin"/></svg></span><div><small>Location</small><strong>Ahmedabad, India</strong></div></div>
+          <div class="c-card-top"><span class="icon-sq alt"><svg class="i"><use href="#i-pin"/></svg></span><div><small>Location</small><strong>Ahmedabad, India</strong></div></div>
           <p>India Standard Time (IST) · Open to roles across India</p>
         </div>
       </div>
@@ -509,7 +569,7 @@
           <div class="field full"><label for="f-subject">Subject</label><input id="f-subject" name="subject" type="text" placeholder="e.g. Technical Lead role / Interview invitation" required></div>
           <div class="field full"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Role, team, timeline or project details…" required></textarea></div>
         </div>
-        <button class="btn btn-lime" type="submit">Send via email app <svg class="i"><use href="#i-send"/></svg></button>
+        <button class="btn btn-accent" type="submit">Send via email app <svg class="i"><use href="#i-send"/></svg></button>
         <p class="form-status" data-form-status role="status" aria-live="polite"></p>
       </form>
 
@@ -520,7 +580,7 @@
           <p>14+ years across Android, Flutter, releases and AI-augmented delivery. Let's talk about the systems, teams and products worth building.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-lime" href="mailto:mihir3646@gmail.com"><svg class="i"><use href="#i-mail"/></svg>Email Mihir</a>
+          <a class="btn btn-accent" href="mailto:mihir3646@gmail.com"><svg class="i"><use href="#i-mail"/></svg>Email Mihir</a>
           <a class="btn btn-dark" href="https://www.linkedin.com/in/mihir3646/" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-linkedin"/></svg>LinkedIn</a>
         </div>
       </div>
@@ -534,11 +594,134 @@
     <span>© 2026 Mihir Trivedi. Head of Tech Team · Mobile &amp; Product Engineering.</span>
     <div class="footer-links">
       <span class="footer-loc"><svg class="i"><use href="#i-pin"/></svg>Ahmedabad, India</span>
-      <a href="https://www.linkedin.com/in/mihir3646/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="social"><a href="https://www.linkedin.com/in/mihir3646/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg class="i"><use href="#i-linkedin"/></svg></a><a href="https://github.com/Mihir3646" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="i"><use href="#i-github"/></svg></a><a href="https://medium.com/@mihir3646" target="_blank" rel="noopener noreferrer" aria-label="Medium" title="Medium"><svg class="i"><use href="#i-medium"/></svg></a><a href="https://mihir3646.blogspot.com/" target="_blank" rel="noopener noreferrer" aria-label="Blogger" title="Blogger"><svg class="i"><use href="#i-blogger"/></svg></a></span>
       <a href="#home">Back to top <svg class="i"><use href="#i-arrow-up"/></svg></a>
     </div>
   </div>
 </footer>
+
+<!-- Resume viewer: an HTML copy of resume/Mihir_Trivedi_ATS_Resume.pdf. Update both together. -->
+<dialog class="resume-dialog" id="resume" aria-labelledby="resume-dialog-title" data-resume-dialog>
+  <div class="rd-head">
+    <p class="rd-title" id="resume-dialog-title"><span class="dot" aria-hidden="true"></span>ATS Resume — Mihir Trivedi</p>
+    <div class="rd-tools">
+      <a class="btn btn-dark btn-sm" href="resume/Mihir_Trivedi_ATS_Resume.pdf" target="_blank" rel="noopener" aria-label="Open PDF in a new tab"><svg class="i"><use href="#i-external"/></svg><span class="lbl">Open PDF</span></a>
+      <button class="icon-btn" type="button" data-resume-close aria-label="Close resume" autofocus><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+  <div class="rd-body" tabindex="0" aria-label="Resume content">
+    <article class="resume-doc">
+      <header class="rs-top">
+        <div class="rs-mark" aria-hidden="true">M<span>T</span><img src="assets/img/profile-sq.webp" alt="" width="92" height="92" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 class="rs-name">Mihir Trivedi</h2>
+          <p class="rs-role">Head of Tech Team | Technical Lead | Mobile &amp; Product Engineering</p>
+          <ul class="rs-contact">
+            <li><svg class="i"><use href="#i-pin"/></svg>Ahmedabad, India</li>
+            <li><svg class="i"><use href="#i-phone"/></svg><a href="tel:+919427064910">+91 94270 64910</a></li>
+            <li><svg class="i"><use href="#i-mail"/></svg><a href="mailto:mihir3646@gmail.com">mihir3646@gmail.com</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-user"/></svg>Professional summary</h3>
+        <p>Hands-on technology leader with 14+ years in software engineering, specializing in Android, Flutter, product delivery and technical decision-making. Head of Tech Team at RightSol Pvt. Ltd. since February 2019, working across Programming Hub's mobile portfolio, releases and cross-functional execution. Recent work includes React-based web delivery and AI-augmented development with Claude Code, alongside experience in monetization, analytics and production reliability.</p>
+      </section>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-cpu"/></svg>Technical skills</h3>
+        <dl class="rs-skills">
+          <div><dt>Leadership &amp; Delivery</dt><dd>Technical leadership, software architecture, technical decision-making, end-to-end delivery, SDLC, Agile/Scrum, cross-functional collaboration, stakeholder communication</dd></div>
+          <div><dt>Mobile &amp; Architecture</dt><dd>Android, Kotlin, Java, Flutter, Dart, iOS release management, MVVM, BLoC, Provider, GetX, Gradle</dd></div>
+          <div><dt>Firebase &amp; Analytics</dt><dd>Firebase Authentication, Firestore, Cloud Functions, Crashlytics, GA4, Remote Config, FCM, Hosting; CleverTap, Amplitude, Mixpanel</dd></div>
+          <div><dt>Payments, Release &amp; Quality</dt><dd>Google Play Billing, App Store In-App Purchases, subscriptions, payment gateways, Google Play Console, App Store Connect, crash monitoring, production issue resolution, app review management</dd></div>
+          <div><dt>Web &amp; AI-Augmented Development</dt><dd>React, Next.js, Node.js, JavaScript, HTML, CSS, Zustand, Tailwind CSS, REST APIs, Claude Code, AI-assisted development, agentic workflows</dd></div>
+          <div><dt>Tools, Data &amp; Earlier Technologies</dt><dd>Git, Jira, SQLite, MySQL, SQL Server, .NET, PhoneGap, jQuery Mobile, Retrofit, RxJava</dd></div>
+        </dl>
+      </section>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-briefcase"/></svg>Professional experience</h3>
+        <div class="rs-job">
+          <div class="rs-job-head"><h4>Head of Tech Team / Senior Software Engineer</h4><span class="rs-when">Feb 2019 – Present</span></div>
+          <p class="rs-co">RightSol Pvt. Ltd. <span>· Ahmedabad, India</span></p>
+          <ul class="rs-list">
+            <li>Lead technical delivery for Programming Hub across product planning, mobile and web engineering, releases, production troubleshooting and stakeholder coordination.</li>
+            <li>Maintain a shared Android codebase supporting approximately 40 app flavors, managing configurations, feature changes and release requirements across apps.</li>
+            <li>Contributed to previously reported improvements reaching 99.7% crash-free users and an app-rating increase from 4.0 to 4.7+; Programming Hub reported 5M+ users.</li>
+            <li>Work across native Android and Flutter applications, Firebase, analytics, subscriptions and Google Play / App Store publishing workflows.</li>
+            <li>Built the Programming Hub website using React, Zustand and Tailwind CSS, integrating existing APIs with AI-assisted implementation and iterative debugging.</li>
+            <li>Collaborate across product, design, testing, content and marketing to plan product updates, prepare launch assets and respond to user feedback.</li>
+            <li>Guide technical decisions for legacy and evolving application code while balancing feature delivery, maintainability and production stability.</li>
+          </ul>
+        </div>
+        <div class="rs-job">
+          <div class="rs-job-head"><h4>Senior Software Engineer</h4><span class="rs-when">Nov 2014 – Feb 2019</span></div>
+          <p class="rs-co">IndiaNIC Infotech <span>· Ahmedabad, India</span></p>
+          <ul class="rs-list">
+            <li>Coordinated developers and project delivery from requirement gathering and prototyping through implementation, testing and release.</li>
+            <li>Worked directly with clients on feature requirements, estimates, technical flows and delivery expectations.</li>
+            <li>Applied MVC/MVVM patterns, collaborated with engineering teams and addressed implementation and quality issues.</li>
+          </ul>
+        </div>
+        <div class="rs-job">
+          <div class="rs-job-head"><h4>Junior Programmer Analyst</h4><span class="rs-when">Jun 2013 – Sep 2014</span></div>
+          <p class="rs-co">Hi-tech Outsourcing <span>· Ahmedabad, India</span></p>
+          <ul class="rs-list">
+            <li>Gathered requirements, prepared application prototypes and flowcharts, and delivered functionality using MVC principles.</li>
+          </ul>
+        </div>
+        <div class="rs-job">
+          <div class="rs-job-head"><h4>Android Application Developer</h4><span class="rs-when">Jun 2012 – May 2013</span></div>
+          <p class="rs-co">Yarra IT <span>· Ahmedabad, India</span></p>
+          <ul class="rs-list">
+            <li>Developed native Android apps from requirements and prototypes through implementation and maintenance.</li>
+          </ul>
+        </div>
+        <div class="rs-job">
+          <div class="rs-job-head"><h4>Programmer</h4><span class="rs-when">Dec 2011 – Jun 2012</span></div>
+          <p class="rs-co">(n) Code Solution – GNFC Software Department <span>· Ahmedabad, India</span></p>
+          <ul class="rs-list">
+            <li>Provided IT and technical support.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-sparkles"/></svg>AI-augmented development</h3>
+        <ul class="rs-list">
+            <li>Use Claude Code and AI-assisted workflows to implement, refine and debug Flutter and web features within existing product requirements.</li>
+            <li>Apply agentic workflows for multi-step development, product planning, UI exploration and testing support.</li>
+            <li>Use AI for content, marketing creatives and design iterations, coordinating delivery across product and engineering activities.</li>
+        </ul>
+      </section>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-layers"/></svg>Selected projects &amp; delivery experience</h3>
+        <ul class="rs-list">
+            <li><strong>Programming Hub</strong> – Mobile learning platform and shared Android app portfolio; Firebase, analytics, in-app purchases and subscription flows.</li>
+            <li><strong>BOTY</strong> – Social Android application featuring RxJava 2, Retrofit 2, QuickBlox and geofencing; participated in delivery and technical coordination.</li>
+            <li><strong>Other Android projects</strong> – Cribitt (maps and live updates), Verigator (TOTP/QR authentication) and ALF Mojis (custom media keyboard).</li>
+        </ul>
+      </section>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-award"/></svg>Selected achievement</h3>
+        <p><strong>Google Hackathon</strong> · Attendee, Google offices, Sunnyvale, California, USA · Nov 20–22, 2019</p>
+      </section>
+
+      <section class="rs-sec">
+        <h3><svg class="i"><use href="#i-grad"/></svg>Education</h3>
+        <p><strong>Master of Computer Applications (MCA)</strong> · North Gujarat University · 2008 – 2011</p>
+      </section>
+    </article>
+  </div>
+  <div class="rd-foot">
+    <p>Same content as the ATS-friendly PDF.</p>
+    <a class="btn btn-accent" href="resume/Mihir_Trivedi_ATS_Resume.pdf" download="Mihir_Trivedi_ATS_Resume.pdf"><svg class="i"><use href="#i-download"/></svg>Download PDF</a>
+  </div>
+</dialog>
 
 <div class="floaters" aria-label="Availability">
   <span class="avail"><span class="dot" aria-hidden="true"></span>Open to roles</span>

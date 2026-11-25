@@ -96,6 +96,32 @@
     if (status) status.textContent = 'Opening your email app… If nothing happens, email mihir3646@gmail.com directly.';
   });
 
+  /* Resume viewer: opens the HTML resume in a dialog; the PDF stays one click away.
+     Without <dialog> support or JS, the links simply open the PDF. */
+  const resumeDialog = document.querySelector('[data-resume-dialog]');
+  if (resumeDialog && typeof resumeDialog.showModal === 'function') {
+    const openResume = () => {
+      if (resumeDialog.open) return;
+      root.classList.add('resume-open');
+      resumeDialog.showModal();
+      resumeDialog.querySelector('.rd-body')?.scrollTo(0, 0);
+    };
+    document.querySelectorAll('[data-resume-open]').forEach(link => link.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      openResume();
+    }));
+    resumeDialog.querySelectorAll('[data-resume-close]').forEach(btn => btn.addEventListener('click', () => resumeDialog.close()));
+    resumeDialog.addEventListener('click', event => { if (event.target === resumeDialog) resumeDialog.close(); });
+    resumeDialog.addEventListener('close', () => {
+      root.classList.remove('resume-open');
+      if (location.hash === '#resume') history.replaceState(null, '', location.pathname + location.search);
+    });
+    const openFromHash = () => { if (location.hash === '#resume') openResume(); };
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  }
+
   /* Back to top */
   document.querySelector('[data-to-top]')?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });

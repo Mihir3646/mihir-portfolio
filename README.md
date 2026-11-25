@@ -9,7 +9,7 @@ A responsive, dependency-free static portfolio designed for professional intervi
 - `assets/styles.css`, `assets/site.js`, `assets/favicon.svg`: design and interactions (theme toggle, dock scroll-spy, project filters, copy buttons, contact form).
 
 ## Profile photo
-The profile card shows an "MT" monogram. To use a photo, save it as `assets/profile.jpg` (portrait, about 368×408 px) and uncomment the `<img>` line inside `.avatar` in `index.html`.
+The photo is `assets/img/profile.webp` (480×532, profile card) and `assets/img/profile-sq.webp` (192×192 face crop, used in the resume viewer; the top bar shows the "MT" monogram). Both were made with `cwebp -metadata none`, so the original photo's GPS location and camera data are **not** published. If you replace the photo, strip its metadata the same way. The "MT" monogram shows if an image fails to load.
 
 ## Project images
 `assets/img/work-*.webp` are the Work card images (also shown at the top of each case study):
@@ -21,6 +21,15 @@ The profile card shows an "MT" monogram. To use a photo, save it as `assets/prof
 They were captured from the public pages on 25 Nov 2026. Re-capture them if the listings change, and confirm your employer is fine with them being shown.
 
 Live links used: [programminghub.io](https://programminghub.io/), [Google Play](https://play.google.com/store/apps/details?id=com.freeit.java), [App Store](https://apps.apple.com/us/app/programming-hub-learn-coding/id1049691226), [developer page](https://play.google.com/store/apps/dev?id=8802462833480602617).
+
+## Earlier Android apps
+The Work section lists 11 earlier Android apps (behind "View all" or the "Earlier Android" filter). On 25 Nov 2026 none of them was on Google Play any more (checked from 9 countries), so they do not link to Play. Six link to the listing saved by the Internet Archive (BOTY, Verigator, Tuisy, Wekho, PMA/"Byggprojekt", Druproid); the other five (Cribitt, ALF Mojis, Lavoro Live, Rajpath Club, FansRave) have no saved copy and say "No longer on Google Play". If an app comes back, swap its link for the live Play URL. The resume is unchanged.
+
+## Resume viewer
+The Resume buttons open the resume inside the site (a `<dialog>` at the end of `index.html`), with "Download PDF" and "Open PDF" buttons. The case-study pages link to `index.html#resume`, which opens it. The text in the dialog is a copy of `resume/Mihir_Trivedi_ATS_Resume.pdf`, so **update both together** when the resume changes. Without JavaScript the buttons open the PDF.
+
+## Profiles
+LinkedIn, GitHub (https://github.com/Mihir3646), Medium (https://medium.com/@mihir3646) and Blogger (https://mihir3646.blogspot.com/) appear as small icons in the footer of every page.
 
 ## Contact form
 The site is static, so the form opens the visitor's email app with the message addressed to you. No backend, database or third-party form service is used.
