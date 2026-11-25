@@ -2,6 +2,8 @@
 
 A responsive, dependency-free static portfolio designed for professional interviews and recruiter review.
 
+**Live site:** https://mihir3646.github.io/mihir-portfolio/
+
 ## Contents
 - `index.html`: single-page portfolio. Fixed top bar with an icon dock, a sticky profile card on the left and scrolling sections on the right: Home, About, Skills, Experience, Work, Approach, Contact.
 - `projects/`: three high-level engineering case studies (same top bar and theme).
@@ -44,12 +46,20 @@ python3 -m http.server 8000
 Then visit `http://localhost:8000`.
 
 ## Publish
-Upload the **contents of this folder** (including `resume/`) to a static host such as Cloudflare Pages, GitHub Pages or Firebase Hosting. No build step, Node.js runtime or paid services are required. A custom domain is optional. Publishing is not performed automatically.
+The site is hosted free on **GitHub Pages** at https://mihir3646.github.io/mihir-portfolio/ (enabled 25 Nov 2026).
+
+- **Source:** Settings → Pages → "Deploy from a branch", branch `main`, folder `/ (root)`.
+- **Updating:** every push to `main` republishes the site automatically, usually within a minute or two. There is no build step.
+- **Links:** all links in the site are relative, so it works from the `/mihir-portfolio/` sub-folder (and would also work at a domain root).
+- **Custom domain (optional):** add it under Settings → Pages → Custom domain, then point the domain's DNS at GitHub Pages and tick "Enforce HTTPS".
+- **Cost:** GitHub Pages is free for public repositories and needs no payment method. Google AI Studio's own "Publish" asks for a Google Cloud billing account and is not needed for this site.
+
+The same folder can also be uploaded as-is to any other static host (Cloudflare Pages, Netlify, Firebase Hosting).
 
 ## Before making public
 1. Review all employment claims and historical product milestones.
 2. Confirm project wording is approved for public use by your employer; no private code or system details are included.
-3. Test external links and resume download after deployment.
+3. Test external links and resume download after deployment (last checked on the live site 25 Nov 2026).
 4. Optionally replace the email address with a dedicated public contact address.
 5. Update year and project details as your career progresses.
 
