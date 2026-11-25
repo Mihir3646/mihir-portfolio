@@ -1,0 +1,14 @@
+{
+  "name": "mihir-trivedi-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interview-focused engineering portfolio with downloadable ATS resume",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
